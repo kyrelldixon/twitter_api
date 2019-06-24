@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :twitter_api, TwitterApiWeb.Endpoint,
   # http: [:inet6, port: System.get_env("PORT") || 4000],
-  http: [port: {:system, "PORT"}]
+  http: [port: {:system, "PORT"}],
   load_from_system_env: true,
   url: [scheme: "https", host: "https://afternoon-beach-31456.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
