@@ -38,3 +38,4 @@ twitter_api-*.tar
 
 cookies.txt
 .elixir_ls
+/priv/cert
