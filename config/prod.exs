@@ -11,7 +11,9 @@ use Mix.Config
 # before starting your production server.
 config :twitter_api, TwitterApiWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: System.get_env("HOST"), port: 80],
+  url: [scheme: "https", host: System.get_env("HOST"), port: System.get_env("PORT")],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
